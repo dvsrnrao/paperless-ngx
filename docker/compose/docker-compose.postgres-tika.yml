@@ -58,6 +58,9 @@ services:
       - media:/usr/src/paperless/media
       - ./export:/usr/src/paperless/export
       - ./consume:/usr/src/paperless/consume
+    labels:
+      tsdproxy.enable: true
+      tsdproxy.ephemeral: false
     env_file: .env
     environment:
       PAPERLESS_REDIS: redis://broker:6379
